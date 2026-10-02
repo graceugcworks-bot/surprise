@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Favourite Person ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
+    color:#526779;
+    background:#d8efff;
+    background-image:
+        linear-gradient(90deg,rgba(255,255,255,.45) 50%,transparent 50%),
+        linear-gradient(rgba(255,255,255,.45) 50%,transparent 50%);
+    background-size:44px 44px;
+    overflow-x:hidden;
+}
+
+/* MUSIC */
+
+#bgMusic{
+    display:none;
+}
+
+/* BOOK */
+
+.book{
+    width:92%;
+    max-width:850px;
+    min-height:690px;
+    margin:24px auto;
+    background:#fbfeff;
+    border:7px solid #a9d9f5;
+    border-radius:30px;
+    box-shadow:
+        0 25px 70px rgba(70,130,170,.22),
+        inset 0 0 40px rgba(180,225,250,.25);
+    position:relative;
+    overflow:hidden;
+}
+
+/* PAGE */
+
+.page{
+    min-height:676px;
+    padding:48px 35px;
+    display:none;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    animation:pageIn .65s ease;
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateX(30px) rotate(1deg);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0) rotate(0);
+    }
+}
+
+/* TEXT */
+
+h1{
+    font-family:'DM Serif Display',serif;
+    font-size:48px;
+    color:#49677d;
+}
+
+h2{
+    font-family:'Caveat',cursive;
+    font-size:48px;
+    color:#4d9bc5;
+}
+
+h3{
+    font-family:'Caveat',cursive;
+    font-size:30px;
+    color:#58758a;
+}
+
+p{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.script{
+    font-family:'Caveat',cursive;
+    font-size:29px;
+    color:#579ac0;
+}
+
+/* BUTTON */
+
+.btn{
+    border:none;
+    padding:12px 27px;
+    border-radius:30px;
+    background:#82c7e8;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(80,160,200,.25);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    background:#69b5dc;
+}
+
+.next{
+    position:absolute;
+    bottom:24px;
+}
+
+/* DECOR */
+
+.decor{
+    position:fixed;
+    z-index:10;
+    pointer-events:none;
+    animation:float 5s ease-in-out infinite;
+}
+
+.d1{
+    left:5%;
+    top:12%;
+    font-size:28px;
+}
+
+.d2{
+    right:5%;
+    top:22%;
+    font-size:25px;
+}
+
+.d3{
+    left:4%;
+    bottom:12%;
+    font-size:34px;
+}
+
+.d4{
+    right:4%;
+    bottom:14%;
+    font-size:30px;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-18px) rotate(7deg);
+    }
+}
+
+/* ENVELOPE */
+
+.envelope{
+    width:285px;
+    height:185px;
+    background:#8ecded;
+    border-radius:10px;
+    margin:42px 0 20px;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 15px 30px rgba(70,130,170,.25);
+    transition:.3s;
+}
+
+.envelope:hover{
+    transform:scale(1.05);
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:#a9dcf5;
+    clip-path:polygon(0 0,50% 55%,100% 0);
+}
+
+.envelope:after{
+    content:"💌";
+    position:absolute;
+    font-size:57px;
+    left:113px;
+    top:68px;
+}
+
+.open{
+    font-family:'Caveat',cursive;
+    font-size:29px;
+    color:#4c94b9;
+}
+
+/* BOYFRIEND DAY */
+
+.daycard{
+    max-width:620px;
+    padding:42px 30px;
+    background:#eef9ff;
+    border:2px dashed #87c7e8;
+    border-radius:25px;
+    box-shadow:0 12px 30px rgba(70,140,180,.12);
+}
+
+.daycard .big{
+    font-family:'Caveat',cursive;
+    font-size:58px;
+    color:#4c9bc6;
+    margin:8px;
+}
+
+.question{
+    font-family:'Caveat',cursive;
+    font-size:28px;
+    margin-top:12px;
+    color:#587386;
+}
+
+/* CERTIFICATE */
+
+.cert{
+    width:92%;
+    max-width:620px;
+    padding:38px 25px;
+    background:#fff;
+    border:9px double #86bdd9;
+    position:relative;
+    box-shadow:0 12px 28px rgba(80,130,160,.15);
+}
+
+.cert:before{
+    content:"🌿";
+    position:absolute;
+    left:10px;
+    top:5px;
+    font-size:34px;
+}
+
+.cert:after{
+    content:"🎀";
+    position:absolute;
+    right:10px;
+    bottom:0;
+    font-size:42px;
+}
+
+.medal{
+    font-size:65px;
+}
+
+.cert h1{
+    font-size:36px;
+}
+
+.cert .name{
+    font-family:'Caveat',cursive;
+    font-size:42px;
+    color:#4e9bc5;
+    margin:8px;
+}
+
+/* REASONS */
+
+.reasonGrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    width:94%;
+    max-width:650px;
+    margin:18px 0;
+}
+
+.reason{
+    background:#eef9ff;
+    border:1px solid #b5dced;
+    border-radius:18px;
+    padding:17px;
+    text-align:left;
+    transition:.3s;
+}
+
+.reason:hover{
+    transform:translateY(-4px);
+    background:#e3f5ff;
+}
+
+.reason b{
+    font-family:'Caveat',cursive;
+    font-size:26px;
+    color:#4798c1;
+}
+
+.reason p{
+    font-size:14px;
+    margin-top:3px;
+}
+
+/* LITTLE THINGS */
+
+.little{
+    background:#edf8ff;
+    border:1px solid #b9dfee;
+    border-radius:18px;
+    padding:20px;
+    margin:8px;
+    width:90%;
+    max-width:600px;
+    text-align:left;
+}
+
+.little p{
+    font-size:17px;
+}
+
+/* LETTER */
+
+.letter{
+    width:94%;
+    max-width:650px;
+    background:#fdfcf5;
+    border:1px solid #d8d3bd;
+    padding:35px;
+    box-shadow:0 10px 25px rgba(80,90,90,.15);
+    transform:rotate(-.5deg);
+    text-align:left;
+}
+
+.letter p{
+    font-family:'Caveat',cursive;
+    font-size:23px;
+    line-height:1.55;
+}
+
+.signature{
+    text-align:right!important;
+    color:#4c9bc5!important;
+    font-size:29px!important;
+}
+
+/* FINAL */
+
+.finalheart{
+    font-size:105px;
+    animation:pulse 1.3s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.13);
+    }
+}
+
+.final{
+    font-family:'Caveat',cursive;
+    font-size:38px;
+    color:#4c9bc5;
+    max-width:650px;
+    margin:10px;
+}
+
+.spark{
+    font-size:42px;
+    margin:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .book{
+        width:95%;
+        margin:12px auto;
+    }
+
+    .page{
+        padding:38px 18px;
+        min-height:680px;
+    }
+
+    h1{
+        font-size:38px;
+    }
+
+    h2{
+        font-size:40px;
+    }
+
+    .reasonGrid{
+        grid-template-columns:1fr;
+    }
+
+    .cert{
+        padding:35px 15px;
+    }
+
+    .cert h1{
+        font-size:31px;
+    }
+
+    .daycard .big{
+        font-size:45px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= MUSIC ================= -->
+
+<audio id="bgMusic" autoplay loop>
+    <source src="C:\Users\Pc\Downloads\Video Project 2.m4a" type="audio/mpeg">
+</audio>
+
+
+<!-- DECORATIONS -->
+
+<div class="decor d1">♡</div>
+<div class="decor d2">❤️</div>
+<div class="decor d3">🌿</div>
+<div class="decor d4">🌸</div>
+
+
+<div class="book">
+
+
+<!-- ================= PAGE 1 ================= -->
+
+<section class="page active" id="p1">
+
+    <div class="script">
+        A tiny little surprise...
+    </div>
+
+    <h1>
+        Open Me ❤️
+    </h1>
+
+    <div class="envelope" onclick="next()"></div>
+
+    <div class="open">
+        tap the letter 💌
+    </div>
+
+</section>
+
+
+<!-- ================= PAGE 2 ================= -->
+
+<section class="page" id="p2">
+
+    <div class="daycard">
+
+        <div class="big">
+            Happy Boyfriend's Day! ❤️
+        </div>
+
+        <p>
+            Aaj boyfriend's day hai...
+            <br>
+            toh aapko kuch milna chahiye na? 👀
+        </p>
+
+        <div class="question">
+            And yes...
+            I have something for you. 🎀
+        </div>
+
+    </div>
+
+    <button class="btn next" onclick="next()">
+        I knew it 😌 →
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 3 ================= -->
+
+<section class="page" id="p3">
+
+    <div class="cert">
+
+        <div class="medal">
+            🏆
+        </div>
+
+        <p style="letter-spacing:3px">
+            THIS CERTIFICATE
+            IS PRESENTED TO
+        </p>
+
+        <div class="name">
+            My Favourite Person
+        </div>
+
+        <h1>
+            BEST BOYFRIEND
+        </h1>
+
+        <p style="margin:10px auto;max-width:500px">
+
+            For making me smile,
+            putting up with my nonsense,
+            being my comfort person
+            and simply being someone
+            I never want to lose. ❤️
+
+        </p>
+
+        <h3>
+            Officially awarded
+            with all my love 🎀
+        </h3>
+
+    </div>
+
+    <button class="btn next" onclick="next()">
+        Okay, now the real part ❤️ →
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 4 ================= -->
+
+<section class="page" id="p4">
+
+    <h2>
+        A Little About You... 🥹
+    </h2>
+
+    <p style="max-width:610px">
+
+        There are so many things
+        about you that I like,
+        and honestly,
+        sometimes I don't even know
+        where to start.
+
+        <br>
+
+        So here's my little list... ❤️
+
+    </p>
+
+
+    <div class="reasonGrid">
+
+        <div class="reason">
+            <b>👀 Your Eyes</b>
+            <p>
+                There's just something
+                about your eyes that makes
+                me want to keep looking
+                at you.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>😊 Your Smile</b>
+            <p>
+                Your smile is one of those
+                things that can instantly
+                make my mood better.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>💇 Your Hair</b>
+            <p>
+                I don't know how you do it,
+                but your hair somehow makes
+                you look even more attractive.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>🫶 Your Hands</b>
+            <p>
+                Even the smallest details
+                about you feel special
+                to me.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>✨ Your Face</b>
+            <p>
+                I could literally stare
+                at your face for no reason
+                and still not get bored.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>🧸 Your Height & Style</b>
+            <p>
+                The way you carry yourself,
+                dress up and just exist...
+                very unfairly attractive.
+            </p>
+        </div>
+
+    </div>
+
+    <button class="btn next" onclick="next()">
+        There's more... →
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 5 ================= -->
+
+<section class="page" id="p5">
+
+    <h2>
+        And It's Not Just Your Looks... ❤️
+    </h2>
+
+    <div class="reasonGrid">
+
+        <div class="reason">
+            <b>🤍 Your Voice</b>
+            <p>
+                I genuinely love hearing
+                you talk, even when you're
+                saying absolutely nothing
+                important.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>😂 Your Humor</b>
+            <p>
+                You have this way of making
+                ordinary moments feel fun.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>🥺 The Way You Care</b>
+            <p>
+                The little things you do
+                without making a big deal
+                about them mean a lot to me.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>😌 Your Presence</b>
+            <p>
+                Sometimes just knowing
+                you're there makes everything
+                feel a little better.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>🙈 Your Cute Habits</b>
+            <p>
+                Even the things you probably
+                don't notice are things
+                I secretly adore.
+            </p>
+        </div>
+
+        <div class="reason">
+            <b>❤️ Just You</b>
+            <p>
+                And somehow, after everything,
+                my favourite thing is simply
+                that you're you.
+            </p>
+        </div>
+
+    </div>
+
+    <button class="btn next" onclick="next()">
+        One more page ♡ →
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 6 ================= -->
+
+<section class="page" id="p6">
+
+    <h2>
+        The Little Things I Love About You 🎀
+    </h2>
+
+    <div class="little">
+        <p>
+            ❤️ The way you make me smile
+            without even trying.
+        </p>
+    </div>
+
+    <div class="little">
+        <p>
+            ❤️ The random conversations
+            I never want to end.
+        </p>
+    </div>
+
+    <div class="little">
+        <p>
+            ❤️ The way your name makes
+            me smile when it pops up
+            on my phone.
+        </p>
+    </div>
+
+    <div class="little">
+        <p>
+            ❤️ Your silly side that I
+            secretly love the most.
+        </p>
+    </div>
+
+    <div class="little">
+        <p>
+            ❤️ The comfort of knowing
+            I can be completely myself
+            with you.
+        </p>
+    </div>
+
+    <div class="little">
+        <p>
+            ❤️ And all those tiny moments
+            that probably mean nothing
+            to anyone else, but mean
+            everything to me.
+        </p>
+    </div>
+
+    <button class="btn next" onclick="next()">
+        Now read this slowly 💌 →
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 7 ================= -->
+
+<section class="page" id="p7">
+
+    <h2>
+        A Letter For You 💌
+    </h2>
+
+    <div class="letter">
+
+        <p>
+
+            Happy Boyfriend's Day, baby. 🥺
+
+            <br><br>
+
+            I know I may not always say
+            everything perfectly,
+            but I hope you know how
+            genuinely special you are to me.
+
+            You have become such a beautiful
+            part of my life,
+            and I'm grateful for every laugh,
+            every conversation,
+            every little moment
+            and every memory we have.
+
+            <br><br>
+
+            I love the person you are,
+            the way you make me feel,
+            and all the little things
+            about you that make you,
+            well... <i>you</i>.
+
+            <br><br>
+
+            If I could give you one thing today,
+            it would be the ability to see
+            yourself through my eyes,
+            just for a moment,
+            so you'd know exactly why
+            I like you this much.
+
+            <br><br>
+
+            Thank you for being
+            my favourite person. ❤️
+
+        </p>
+
+        <p class="signature">
+            Always yours, ❤️
+        </p>
+
+    </div>
+
+    <button class="btn next" onclick="next()">
+        There's a little surprise left... →
+    </button>
+
+</section>
+
+
+<!-- ================= PAGE 8 ================= -->
+
+<section class="page" id="p8">
+
+    <div class="finalheart">
+        ❤️
+    </div>
+
+    <h1>
+        One Last Thing...
+    </h1>
+
+    <p class="final">
+
+        If I had to choose
+        my favourite person
+        all over again,
+
+        <br>
+
+        I'd still choose you.
+
+    </p>
+
+    <div class="spark">
+        🌷 ✨ 🎀 ✨ 🌷
+    </div>
+
+    <p style="max-width:560px">
+
+        So keep this tiny little website
+        as a reminder that somewhere,
+        there's a girl who thinks
+        you're pretty damn special. 🥹
+
+    </p>
+
+    <h2 style="margin-top:20px">
+
+        Happy Boyfriend's Day,
+        my love. ❤️
+
+    </h2>
+
+</section>
+
+</div>
+
+
+<script>
+
+let page = 1;
+
+
+/* ================= MUSIC ================= */
+
+const music = document.getElementById("bgMusic");
+
+music.volume = 0.7;
+
+
+/* Try to play immediately */
+
+window.addEventListener("load", function(){
+
+    music.play().catch(function(){
+
+        console.log(
+            "Browser blocked autoplay. Music will start after first click."
+        );
+
+    });
+
+});
+
+
+/* Extra fallback:
+   First click anywhere starts music */
+
+document.addEventListener("click", function(){
+
+    if(music.paused){
+
+        music.play().catch(function(){});
+
+    }
+
+},{once:true});
+
+
+/* ================= NEXT PAGE ================= */
+
+function next(){
+
+    if(music.paused){
+
+        music.play().catch(function(){});
+
+    }
+
+    document
+        .getElementById("p" + page)
+        .classList
+        .remove("active");
+
+
+    page++;
+
+
+    if(page > 8){
+        page = 8;
+    }
+
+
+    document
+        .getElementById("p" + page)
+        .classList
+        .add("active");
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+setInterval(function(){
+
+    const x =
+        document.createElement("div");
+
+
+    x.textContent =
+        ["♡","❤️","🌸","✨"]
+        [Math.floor(Math.random()*4)];
+
+
+    x.style.position="fixed";
+
+    x.style.left =
+        Math.random()*100+"vw";
+
+    x.style.bottom="-25px";
+
+    x.style.fontSize =
+        (14+Math.random()*18)+"px";
+
+    x.style.pointerEvents="none";
+
+    x.style.zIndex="20";
+
+    x.style.transition =
+        "transform 6s linear,opacity 6s linear";
+
+
+    document.body.appendChild(x);
+
+
+    setTimeout(function(){
+
+        x.style.transform =
+            "translateY(-110vh) rotate(180deg)";
+
+        x.style.opacity="0";
+
+    },50);
+
+
+    setTimeout(function(){
+
+        x.remove();
+
+    },6200);
+
+
+},1300);
+
+</script>
+
+</body>
+</html>
